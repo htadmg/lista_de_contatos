@@ -22,7 +22,8 @@ Este projeto é uma aplicação simples para gerenciamento de contatos. A aplica
 - **`style/principal.css`**: Arquivo CSS para estilização e responsividade.
 - **`scripts/Listas.js`**: Arquivo JavaScript contendo a lógica para gerenciamento dos contatos e interação com o `localStorage`.
 
-**Como Usar**:
+
+## Como Usar:
     - Clone ou faça o download deste repositório.
     - Abra o arquivo index.html no seu navegador.
     - Use o formulário para adicionar novos contatos.
