@@ -66,3 +66,22 @@ function Editar(id){
 function Salvar(){
     localStorage.setItem("minhaLista", JSON.stringify(lista))
 }
+
+document.getElementById('telefone').addEventListener('input', function (event) {
+    let input = event.target;
+    let telefone = input.value.replace(/\D/g, ''); 
+
+    if (telefone.length > 11) {
+        telefone = telefone.substring(0, 11);
+    }
+
+    if (telefone.length > 6) {
+        telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2, 7)}-${telefone.substring(7)}`;
+    } else if (telefone.length > 2) {
+        telefone = `(${telefone.substring(0, 2)}) ${telefone.substring(2)}`;
+    } else if (telefone.length > 0) {
+        telefone = `(${telefone}`;
+    }
+
+    input.value = telefone;
+});
