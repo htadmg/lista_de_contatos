@@ -8,7 +8,6 @@
 
 const formulario = document.getElementById("formulario")
 
-const ulPessoas = document.getElementById("contatos")
 
 CriarListaDeContatos()
 
@@ -31,18 +30,21 @@ formulario.addEventListener("submit", function (e){
 })
 
 function CriarListaDeContatos(filtro=""){
-    ulPessoas.innerHTML = "";
+    const tbody = document.querySelector('#contatos tbody');
+    tbody.innerHTML = "";
 
     lista.forEach((item, key) => {
-        if(item.nome.toUpperCase().indexOf(filtro.toUpperCase()) >= 0 || filtro == "" ){
-            linha = document.createElement('li');
+        if(item.nome.toUpperCase().indexOf(filtro.toUpperCase()) >= 0 || filtro == "") {
+            const linha = document.createElement('tr');
             linha.innerHTML = `
-            <span class="nome">${item.nome}</span>
-            <span class="telefone">${item.telefone}</span>
-            <button class="excluir" onClick="Excluir(${key})">Excluir</button> 
-            <button class="editar" onClick="Editar(${key})">Editar</button>
-            `
-            ulPessoas.appendChild(linha)
+                <td class="nome">${item.nome}</td>
+                <td class="telefone">${item.telefone}</td>
+                <td class="acoes">
+                    <button class="excluir" onClick="Excluir(${key})"><i class="bi bi-trash3"></i></button> 
+                    <button class="editar" onClick="Editar(${key})"><i class="bi bi-pencil-square"></i></button>
+                </td>
+            `;
+            tbody.appendChild(linha);
         }
     });
 }

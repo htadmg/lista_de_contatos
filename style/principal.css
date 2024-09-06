@@ -1,77 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-*{
-    font-family: "Ubuntu", system-ui;
-    margin:0;
-    padding:0;
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-header{
-    background-color:hsl(308 56% 85%);
-    padding:10px;
-    gap:20px;
-    justify-content:space-between;
-    display:flex;
-    align-items:center;
-}
-h1{
-    margin:10px 0;
-    color:hsl(210 22% 22%);
-}
-header > a{
-    text-decoration:none;
-    background-color:hsl(210 22% 22%);
-    color:hsl(308 56% 85%);
-    text-transform:capitalize;
-    padding:10px;
-    border-radius:20px;
-}
-main{
-    padding:20px;
-    background:hsl(210deg 40% 80% / 70%);
-}
-
-.lista > input{
-    width: calc(100% - 40px);
-    padding:10px;
-    border-radius:20px;
-    text-indent:1rem;
-    border: 1px solid hsl(210deg 40% 80% / 70%);
-    margin-bottom:10px;
-}
-ul{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    +
-    height: 600px;
-    overflow-y:auto;
-    height: 400px;
-}
-li{
-    list-style:none;
-    padding: 10px;
-    border: 1px solid hsl(210deg 40% 80% );
-    border-radius:20px;
-    box-shadow:1px 1px 10px hsl(210deg 40% 80% );
+header {
+    background-color: hsl(308 56% 85%); /* Rosa */
+    color: white;
+    padding: 15px 20px;
     display: flex;
-    flex-direction:column;
-    gap:10px;
-    margin:10px
+    justify-content: space-between;
+    align-items: center;
 }
 
-.nome{
-    text-transform:capitalize;
+header h1 {
+    margin: 0;
 }
-.telefone{
-    font-size: 13px;
-    color: #000000c2;
-    font-weight: bold;
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: hsl(210deg 100% 73.33%); /* Roxo */
+}
+
+header a i {
+    margin-right: 5px;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.lista {
+    margin-bottom: 20px;
+}
+
+.lista input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.lista ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"] {
+    width: calc(100% - 22px); /* Ajusta a largura para compensar o padding e border */
+    padding: 10px;
     margin-bottom: 10px;
+    border: 1px solid hsl(308 56% 85%); /* Rosa */
+    border-radius: 5px;
+    font-size: 16px;
 }
 
-button{
-    padding:6px;
-    border-radius:20px;
-    border: 1px solid;
+form input[type="submit"] {
+    background-color: hsl(210deg 100% 73.33%); /* Roxo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form input[type="submit"]:hover {
+    background-color: hsl(210 22% 22%); /* Roxo mais escuro */
+}
+
+/* Estilos para a tabela de contatos */
+.tabela-contatos {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabela-contatos th, .tabela-contatos td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tabela-contatos th {
+    background-color: hsl(308 56% 85%); /* Rosa */
+    color: white;
+}
+
+.tabela-contatos tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.tabela-contatos tr:hover {
+    background-color: #e9ecef; /* Cor de destaque ao passar o mouse */
+}
+
+.tabela-contatos .acoes button {
+    background: none;
+    border: none;
+    color: hsl(210 22% 22%); /* Roxo */
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.tabela-contatos .acoes button:hover {
+    color: hsl(210 22% 22%); /* Roxo mais escuro */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header a {
+        margin-top: 10px;
+    }
+
+    form {
+        padding: 10px;
+    }
 }

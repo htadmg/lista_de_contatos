@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./style/principal.css">
-    <title>Lista de Contantos</title>
+    <title>Lista de Contatos</title>
 </head>
 <body>
     <header>
@@ -13,18 +13,28 @@
         <a href=""><i class="bi bi-plus"></i> Novo contato</a>
     </header>
     <main>
-        
-        <div class="lista">
-            <input type="text" placeholder="Pesquisar" onkeyup="CriarListaDeContatos(this.value)">
-            <ul id="contatos">
-            </ul>
-        </div>
         <form id="formulario">
             <input type="hidden" name="id">
             <input type="text" name="nome" maxlength="50" placeholder="Nome" required>
-            <input type="text" name="telefone" maxlength="15" placeholder="telefone" required>
+            <input type="text" name="telefone" maxlength="15" placeholder="Telefone" required>
             <input type="submit" value="Salvar">
         </form>
+        <div class="lista">
+            <input type="text" placeholder="Pesquisar" onkeyup="CriarListaDeContatos(this.value)">
+            <table id="contatos" class="tabela-contatos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As linhas de contato serão inseridas aqui -->
+                </tbody>
+            </table>
+        </div>
+        
     </main>
     <script src="./scripts/Listas.js"></script>
 </body>
