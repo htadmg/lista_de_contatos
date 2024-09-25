@@ -33,7 +33,7 @@ git clone git@github.com:htadmg/lista_de_contatos.git
 ```
 - Navegue até o diretório do projeto:
 ```bash
-cd .\lista_de_tarefas
+cd .\lista_de_contatos
 ```
 2. **Abra o arquivo index.html no seu navegador**
     - Use o formulário para adicionar novos contatos.
